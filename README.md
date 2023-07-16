@@ -21,6 +21,7 @@ No modules.
 | [aws_route53_record.mx](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_record.ns](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_record.soa](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
+| [aws_route53_record.txt](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_zone.zone](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_zone) | resource |
 
 ## Inputs
@@ -35,6 +36,7 @@ No modules.
 | <a name="input_ns_records_ttl"></a> [ns\_records\_ttl](#input\_ns\_records\_ttl) | The TTL value (in seconds) for the NS records. | `number` | `86400` | no |
 | <a name="input_soa_records"></a> [soa\_records](#input\_soa\_records) | List of strings representing the values of the SOA records. | `list(string)` | n/a | yes |
 | <a name="input_soa_records_ttl"></a> [soa\_records\_ttl](#input\_soa\_records\_ttl) | The TTL value (in seconds) for the SOA records. | `number` | `86400` | no |
+| <a name="input_txt_records"></a> [txt\_records](#input\_txt\_records) | List of objects representing the TXT records. | <pre>list(object({<br>    name    = string<br>    ttl     = number<br>    records = list(string)<br>  }))</pre> | `[]` | no |
 | <a name="input_zone_name"></a> [zone\_name](#input\_zone\_name) | The name of the Route 53 DNS zone to be created. | `string` | n/a | yes |
 
 ## Outputs
