@@ -55,3 +55,13 @@ variable "cname_records" {
   default     = []
   description = "List of objects representing the CNAME records."
 }
+
+variable "txt_records" {
+  type = list(object({
+    name    = string
+    ttl     = number
+    records = list(string)
+  }))
+  default     = []
+  description = "List of objects representing the TXT records."
+}

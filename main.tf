@@ -48,3 +48,13 @@ resource "aws_route53_record" "cname" {
   ttl     = each.value.ttl
   records = each.value.records
 }
+
+resource "aws_route53_record" "txt" {
+  for_each = { for txt_record in var.txt_records : txt_record.name => txt_record }
+
+  zone_id = aws_route53_zone.zone.zone_id
+  name    = each.key
+  type    = "TXT"
+  ttl     = each.value.ttl
+  records = each.value.records
+}
